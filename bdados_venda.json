@@ -1,0 +1,277 @@
+[
+  {
+    "id_venda": 1,
+    "data": "2025-10-01",
+    "produtos": [
+      {"nome": "Arroz Integral 5kg", "quantidade": 1, "preco_unitario": 25.50},
+      {"nome": "Leite Semi-desnatado 1L", "quantidade": 4, "preco_unitario": 4.99},
+      {"nome": "Pão de Forma Tradicional", "quantidade": 2, "preco_unitario": 7.80}
+    ],
+    "valor_total": 59.46
+  },
+  {
+    "id_venda": 2,
+    "data": "2025-10-02",
+    "produtos": [
+      {"nome": "Cerveja Pilsen Lata 350ml", "quantidade": 12, "preco_unitario": 3.50},
+      {"nome": "Salgadinho de Queijo", "quantidade": 3, "preco_unitario": 6.20}
+    ],
+    "valor_total": 60.60
+  },
+  {
+    "id_venda": 3,
+    "data": "2025-10-03",
+    "produtos": [
+      {"nome": "Feijão Preto Tipo 1 1kg", "quantidade": 2, "preco_unitario": 8.90},
+      {"nome": "Café em Pó Gourmet 500g", "quantidade": 1, "preco_unitario": 19.99}
+    ],
+    "valor_total": 37.79
+  },
+  {
+    "id_venda": 4,
+    "data": "2025-10-04",
+    "produtos": [
+      {"nome": "Frango Congelado 1kg", "quantidade": 1, "preco_unitario": 15.00},
+      {"nome": "Brócolis Congelado 300g", "quantidade": 2, "preco_unitario": 5.90},
+      {"nome": "Ovos Brancos Dúzia", "quantidade": 1, "preco_unitario": 12.00}
+    ],
+    "valor_total": 38.80
+  },
+  {
+    "id_venda": 5,
+    "data": "2025-10-05",
+    "produtos": [
+      {"nome": "Chocolate Amargo 70%", "quantidade": 5, "preco_unitario": 10.50},
+      {"nome": "Vinho Tinto Chileno", "quantidade": 1, "preco_unitario": 45.00}
+    ],
+    "valor_total": 97.50
+  },
+  {
+    "id_venda": 6,
+    "data": "2025-10-06",
+    "produtos": [
+      {"nome": "Maçã (kg)", "quantidade": 2, "preco_unitario": 7.50},
+      {"nome": "Banana (kg)", "quantidade": 3, "preco_unitario": 5.99},
+      {"nome": "Água Mineral 1.5L", "quantidade": 6, "preco_unitario": 2.50}
+    ],
+    "valor_total": 37.97
+  },
+  {
+    "id_venda": 7,
+    "data": "2025-10-07",
+    "produtos": [
+      {"nome": "Detergente Líquido", "quantidade": 5, "preco_unitario": 3.20},
+      {"nome": "Sabão em Pó 1kg", "quantidade": 1, "preco_unitario": 18.50}
+    ],
+    "valor_total": 34.50
+  },
+  {
+    "id_venda": 8,
+    "data": "2025-10-08",
+    "produtos": [
+      {"nome": "Carne Moída Patinho (kg)", "quantidade": 0.8, "preco_unitario": 32.00},
+      {"nome": "Macarrão Espaguete 500g", "quantidade": 4, "preco_unitario": 3.99}
+    ],
+    "valor_total": 41.56
+  },
+  {
+    "id_venda": 9,
+    "data": "2025-10-09",
+    "produtos": [
+      {"nome": "Suco de Laranja 1L (caixa)", "quantidade": 8, "preco_unitario": 5.99}
+    ],
+    "valor_total": 47.92
+  },
+  {
+    "id_venda": 10,
+    "data": "2025-10-10",
+    "produtos": [
+      {"nome": "Pizza Congelada Queijo", "quantidade": 3, "preco_unitario": 19.90},
+      {"nome": "Refrigerante Cola 2L", "quantidade": 2, "preco_unitario": 7.50}
+    ],
+    "valor_total": 74.70
+  },
+  {
+    "id_venda": 11,
+    "data": "2025-10-11",
+    "produtos": [
+      {"nome": "Farinha de Trigo 1kg", "quantidade": 5, "preco_unitario": 4.50},
+      {"nome": "Açúcar Refinado 1kg", "quantidade": 3, "preco_unitario": 3.90}
+    ],
+    "valor_total": 34.20
+  },
+  {
+    "id_venda": 12,
+    "data": "2025-10-12",
+    "produtos": [
+      {"nome": "Queijo Mussarela (kg)", "quantidade": 0.5, "preco_unitario": 49.00},
+      {"nome": "Presunto Cozido (kg)", "quantidade": 0.4, "preco_unitario": 35.00}
+    ],
+    "valor_total": 38.50
+  },
+  {
+    "id_venda": 13,
+    "data": "2025-10-13",
+    "produtos": [
+      {"nome": "Cerveja Artesanal (unidade)", "quantidade": 4, "preco_unitario": 18.00},
+      {"nome": "Petiscos Variados", "quantidade": 2, "preco_unitario": 12.50}
+    ],
+    "valor_total": 92.00
+  },
+  {
+    "id_venda": 14,
+    "data": "2025-10-14",
+    "produtos": [
+      {"nome": "Shampoo 350ml", "quantidade": 1, "preco_unitario": 15.00},
+      {"nome": "Condicionador 350ml", "quantidade": 1, "preco_unitario": 17.00}
+    ],
+    "valor_total": 32.00
+  },
+  {
+    "id_venda": 15,
+    "data": "2025-10-15",
+    "produtos": [
+      {"nome": "Óleo de Soja 900ml", "quantidade": 5, "preco_unitario": 7.90},
+      {"nome": "Sal Refinado 1kg", "quantidade": 2, "preco_unitario": 2.50}
+    ],
+    "valor_total": 44.50
+  },
+  {
+    "id_venda": 16,
+    "data": "2025-10-16",
+    "produtos": [
+      {"nome": "Pêra (kg)", "quantidade": 1.5, "preco_unitario": 10.00},
+      {"nome": "Uva (bandeja)", "quantidade": 2, "preco_unitario": 14.50}
+    ],
+    "valor_total": 44.00
+  },
+  {
+    "id_venda": 17,
+    "data": "2025-10-17",
+    "produtos": [
+      {"nome": "Biscoito Recheado", "quantidade": 10, "preco_unitario": 2.99}
+    ],
+    "valor_total": 29.90
+  },
+  {
+    "id_venda": 18,
+    "data": "2025-10-18",
+    "produtos": [
+      {"nome": "Iogurte Natural 170g", "quantidade": 12, "preco_unitario": 3.50},
+      {"nome": "Granola 500g", "quantidade": 2, "preco_unitario": 11.50}
+    ],
+    "valor_total": 65.00
+  },
+  {
+    "id_venda": 19,
+    "data": "2025-10-19",
+    "produtos": [
+      {"nome": "Carvão 3kg", "quantidade": 1, "preco_unitario": 20.00},
+      {"nome": "Picanha (kg)", "quantidade": 1.2, "preco_unitario": 75.00}
+    ],
+    "valor_total": 110.00
+  },
+  {
+    "id_venda": 20,
+    "data": "2025-10-20",
+    "produtos": [
+      {"nome": "Leite Condensado (lata)", "quantidade": 4, "preco_unitario": 6.99},
+      {"nome": "Creme de Leite (caixa)", "quantidade": 3, "preco_unitario": 4.50}
+    ],
+    "valor_total": 41.46
+  },
+  {
+    "id_venda": 21,
+    "data": "2025-10-21",
+    "produtos": [
+      {"nome": "Papel Higiênico 12 rolos", "quantidade": 2, "preco_unitario": 22.90}
+    ],
+    "valor_total": 45.80
+  },
+  {
+    "id_venda": 22,
+    "data": "2025-10-22",
+    "produtos": [
+      {"nome": "Batata (kg)", "quantidade": 5, "preco_unitario": 5.00},
+      {"nome": "Cebola (kg)", "quantidade": 3, "preco_unitario": 4.50},
+      {"nome": "Tomate (kg)", "quantidade": 2, "preco_unitario": 8.00}
+    ],
+    "valor_total": 51.50
+  },
+  {
+    "id_venda": 23,
+    "data": "2025-10-23",
+    "produtos": [
+      {"nome": "Whisky Importado", "quantidade": 1, "preco_unitario": 120.00}
+    ],
+    "valor_total": 120.00
+  },
+  {
+    "id_venda": 24,
+    "data": "2025-10-24",
+    "produtos": [
+      {"nome": "Guaraná em Lata 350ml", "quantidade": 6, "preco_unitario": 3.00}
+    ],
+    "valor_total": 18.00
+  },
+  {
+    "id_venda": 25,
+    "data": "2025-10-25",
+    "produtos": [
+      {"nome": "Leite em Pó Integral 400g", "quantidade": 2, "preco_unitario": 15.90}
+    ],
+    "valor_total": 31.80
+  },
+  {
+    "id_venda": 26,
+    "data": "2025-10-26",
+    "produtos": [
+      {"nome": "Picanha (kg)", "quantidade": 1.5, "preco_unitario": 75.00},
+      {"nome": "Cerveja Especial (pack)", "quantidade": 2, "preco_unitario": 35.00}
+    ],
+    "valor_total": 182.50
+  },
+  {
+    "id_venda": 27,
+    "data": "2025-10-27",
+    "produtos": [
+      {"nome": "Cenoura (kg)", "quantidade": 2, "preco_unitario": 4.00},
+      {"nome": "Alface Americana", "quantidade": 3, "preco_unitario": 3.50}
+    ],
+    "valor_total": 18.50
+  },
+  {
+    "id_venda": 28,
+    "data": "2025-10-28",
+    "produtos": [
+      {"nome": "Pastilhas para Lava-Louças", "quantidade": 1, "preco_unitario": 39.90}
+    ],
+    "valor_total": 39.90
+  },
+  {
+    "id_venda": 29,
+    "data": "2025-10-29",
+    "produtos": [
+      {"nome": "Bacon em Cubos (kg)", "quantidade": 0.5, "preco_unitario": 30.00}
+    ],
+    "valor_total": 15.00
+  },
+  {
+    "id_venda": 30,
+    "data": "2025-10-30",
+    "produtos": [
+      {"nome": "Massa de Lasanha (pacote)", "quantidade": 2, "preco_unitario": 8.99},
+      {"nome": "Molho de Tomate Tradicional", "quantidade": 4, "preco_unitario": 3.50}
+    ],
+    "valor_total": 31.98
+  },
+  {
+    "id_venda": 31,
+    "data": "2025-10-31",
+    "produtos": [
+      {"nome": "Chocolate Halloween (saco)", "quantidade": 3, "preco_unitario": 25.00},
+      {"nome": "Refrigerante Laranja 2L", "quantidade": 2, "preco_unitario": 7.50}
+    ],
+    "valor_total": 90.00
+  }
+]
