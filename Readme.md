@@ -69,8 +69,8 @@ This repository serves as a practical demonstration of essential skills in Data 
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/GeovaneParedes/simulador_clientes/mercado2irmaos](https://github.com/GeovaneParedes/simulador_clientes/mercador2irmaos.git)
-   cd https://github.com/GeovaneParedes/simulador_clientes
+   git clone [https://github.com/GeovaneParedes/mercado2irmaos.git](https://github.com/GeovaneParedes/mercado2irmaos.git)
+   cd https://github.com/GeovaneParedes/mercado2irmaos.git
 
 Execute o script Python:
 
