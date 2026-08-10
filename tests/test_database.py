@@ -6,6 +6,7 @@ from app.models.entities import Venda, Produto
 
 @pytest.fixture
 def db_session():
+    Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     session = SessionLocal()
     yield session
@@ -25,3 +26,4 @@ def test_popular_banco_dados(db_session):
     
     total = repo.obter_total_vendas()
     assert total > 0
+

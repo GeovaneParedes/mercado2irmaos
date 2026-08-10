@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado 2 Irmãos - Dashboard Analítico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-green: #4ade80;
+            --accent-purple: #a855f7;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .kpi-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .kpi-title {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .kpi-value.green { color: var(--accent-green); }
+        .kpi-value.purple { color: var(--accent-purple); }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .chart-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        canvas {
+            max-height: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🛒 Mercado 2 Irmãos <span>Analytics</span></h1>
+        <div><small style="color: var(--text-muted);">Painel de Vendas em Tempo Real</small></div>
+    </div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-title">Faturamento Total</div>
+            <div class="kpi-value green" id="kpi-faturamento">R$ 0,00</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Total de Vendas</div>
+            <div class="kpi-value" id="kpi-qtd-vendas">0</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Ticket Médio</div>
+            <div class="kpi-value purple" id="kpi-ticket">R$ 0,00</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Média Diária</div>
+            <div class="kpi-value" id="kpi-media-diaria">R$ 0,00</div>
+        </div>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-card">
+            <div class="chart-title">📈 Tendência de Vendas Diárias</div>
+            <canvas id="chart-vendas"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="chart-title">🏆 Top Produtos por Faturamento</div>
+            <canvas id="chart-top-produtos"></canvas>
+        </div>
+    </div>
+
+    <script>
+        async function loadDashboard() {
+            // Carregar KPIs
+            const resKpis = await fetch('/api/kpis');
+            const kpis = await resKpis.json();
+            
+            document.getElementById('kpi-faturamento').innerText = `R$ ${kpis.total_vendas_faturamento.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            document.getElementById('kpi-qtd-vendas').innerText = kpis.quantidade_vendas;
+            document.getElementById('kpi-ticket').innerText = `R$ ${kpis.ticket_medio.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+            document.getElementById('kpi-media-diaria').innerText = `R$ ${kpis.media_diaria.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+
+            // Carregar Gráfico de Vendas Diárias
+            const resDiarias = await fetch('/api/vendas-diarias');
+            const diarias = await resDiarias.json();
+
+            new Chart(document.getElementById('chart-vendas'), {
+                type: 'line',
+                data: {
+                    labels: diarias.map(d => d.data),
+                    datasets: [{
+                        label: 'Vendas (R$)',
+                        data: diarias.map(d => d.total_vendido),
+                        borderColor: '#38bdf8',
+                        backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }
+                    }
+                }
+            });
+
+            // Carregar Top Produtos
+            const resTop = await fetch('/api/top-produtos');
+            const topProds = await resTop.json();
+
+            new Chart(document.getElementById('chart-top-produtos'), {
+                type: 'bar',
+                data: {
+                    labels: topProds.map(p => p.produto),
+                    datasets: [{
+                        label: 'Faturamento (R$)',
+                        data: topProds.map(p => p.faturamento),
+                        backgroundColor: ['#4ade80', '#38bdf8', '#a855f7', '#f43f5e', '#fbbf24']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } }
+                    }
+                }
+            });
+        }
+
+        loadDashboard();
+    </script>
+</body>
+</html>
